@@ -1,7 +1,7 @@
 package racingcar.domain;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * 자동차 이름 여러개를 관리하는 객체
@@ -9,17 +9,13 @@ import java.util.stream.Collectors;
 
 public class CarNames {
 
-    private final List<String> carNames;
+    private final List<CarName> carNames = new ArrayList<>();
 
     public CarNames(List<String> carNames) {
         validateUniqueName(carNames);
-        this.carNames = carNames.stream()
-                .map(name -> new CarName(name).getName())
-                .collect(Collectors.toList());
-    }
-
-    public List<String> getCarNames() {
-        return carNames;
+        for (String carName : carNames) {
+            this.carNames.add(new CarName(carName));
+        }
     }
 
     private void validateUniqueName(List<String> carNames) {

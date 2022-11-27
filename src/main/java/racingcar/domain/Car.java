@@ -4,32 +4,19 @@ import racingcar.information.GameRule;
 
 public class Car {
 
-    private static final int NAME_LENGTH = 5;
-
-    private final String name;
+    private final CarName name;
     private int position = 0;
 
-    public Car(String name) {
-        validateNameLength(name);
+    public Car(CarName name) {
         this.name = name;
     }
 
-    public static int getNameLength() {
-        return NAME_LENGTH;
-    }
-
-    public String getName() {
+    public CarName getName() {
         return name;
     }
 
     public int getPosition() {
         return position;
-    }
-
-    private void validateNameLength(String name) {
-        if (name.length() > NAME_LENGTH) {
-            throw new IllegalArgumentException();
-        }
     }
 
     public void moveForward(int number) {
