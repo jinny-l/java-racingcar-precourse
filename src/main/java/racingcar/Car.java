@@ -14,13 +14,25 @@ public class Car {
         this.name = name;
     }
 
+    public static int getNameLength() {
+        return NAME_LENGTH;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
     private void validateNameLength(String name) {
         if (name.length() > NAME_LENGTH) {
             throw new IllegalArgumentException();
         }
     }
 
-    private void moveForward(int number) {
+    public void moveForward(int number) {
         if (number >= GameRule.MOVE_FORWARD.getNumber()) {
             position++;
         }
