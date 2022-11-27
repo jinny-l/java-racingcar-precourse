@@ -4,7 +4,7 @@ import camp.nextstep.edu.missionutils.Console;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import racingcar.domain.Car;
+import racingcar.domain.CarName;
 
 public class InputView {
 
@@ -25,7 +25,7 @@ public class InputView {
     }
 
     public static void validateSeparatedByComma(String input, String delimiter) {
-        if (input.length() > Car.getNameLength() && !input.contains(delimiter)) {
+        if (input.length() > CarName.getCarNameLength() && !input.contains(delimiter)) {
             throw new IllegalArgumentException();
         }
     }
