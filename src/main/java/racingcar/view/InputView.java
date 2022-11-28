@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import racingcar.domain.CarName;
+import racingcar.information.ErrorMessage;
 
 public class InputView {
 
@@ -45,7 +46,7 @@ public class InputView {
         try {
             return Integer.parseInt(input);
         } catch (NumberFormatException ne) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ErrorMessage.NOT_VALID_INPUT_TYPE_ERROR.getMessage());
         }
     }
 
@@ -61,7 +62,7 @@ public class InputView {
 
     private static void validateHasInput(String input) {
         if (input.isEmpty()) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ErrorMessage.INPUT_IS_EMPTY_ERROR.getMessage());
         }
     }
 

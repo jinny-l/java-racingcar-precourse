@@ -1,5 +1,6 @@
 package racingcar.domain;
 
+import racingcar.information.ErrorMessage;
 import racingcar.information.GameRule;
 
 /**
@@ -21,7 +22,7 @@ public class Attempts {
 
     public static void validateNumberRange(int attempts) {
         if (attempts < GameRule.ATTEMPTS_MIN_NUMBER.getNumber()) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ErrorMessage.NOT_VALID_ATTEMPTS_NUMBER_ERROR.getMessage());
         }
     }
 }

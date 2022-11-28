@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import racingcar.information.ErrorMessage;
+
 /**
  * 자동차 이름 1개를 관리하는 객체
  */
@@ -25,7 +27,7 @@ public class CarName {
 
     private void validateNameLength(String name) {
         if (name.length() > CAR_NAME_LENGTH) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ErrorMessage.NOT_VALID_NAME_LENGTH_ERROR.getMessage());
         }
     }
 

@@ -34,6 +34,7 @@ public class GameController {
         try {
             carNames = new CarNames(InputView.readCarName());
         } catch (IllegalArgumentException ie) {
+            System.out.println(ie.getMessage());
             readCarName();
         }
     }
@@ -42,6 +43,7 @@ public class GameController {
         try {
             attempts = new Attempts(InputView.readAttempts());
         } catch (IllegalArgumentException ie) {
+            System.out.println(ie.getMessage());
             readAttempts();
         }
     }
