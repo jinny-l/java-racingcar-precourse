@@ -45,10 +45,9 @@ public class Cars {
 
     /**
      * 자동차 여러 대를 이동할 때 사용하는 메서드
-     * @param number : 랜덤 숫자
      */
-    public void move(int number) {
-        cars.forEach(car -> car.moveForward(number));
+    public void move() {
+        cars.forEach(Car::moveForward);
     }
 
 }

@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 import racingcar.information.GameRule;
+import racingcar.util.RandomNumberGenerator;
 
 /**
  * 자동차 1대를 관리하는 객체
@@ -27,9 +28,9 @@ public class Car {
 
     /**
      * 자동차를 한 칸 이동할 때 사용하는 메서드
-     * @param number : 랜덤 숫자
      */
-    public void moveForward(int number) {
+    public void moveForward() {
+        int number = RandomNumberGenerator.getNumber();
         if (number >= GameRule.MOVE_FORWARD.getNumber()) {
             position++;
         }

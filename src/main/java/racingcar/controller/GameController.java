@@ -4,7 +4,6 @@ import racingcar.domain.Attempts;
 import racingcar.domain.CarNames;
 import racingcar.domain.Cars;
 import racingcar.service.RacingGame;
-import racingcar.util.RandomNumberGenerator;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -52,7 +51,7 @@ public class GameController {
      */
     private void printResult() {
         for (int i = 0; i < numberOfAttempts; i++) {
-            cars.move(RandomNumberGenerator.getNumber());
+            cars.move();
             OutputView.printResult(cars.getCarsInformation());
         }
     }
