@@ -1,7 +1,7 @@
 package racingcar.domain;
 
 import racingcar.information.GameRule;
-import racingcar.util.RandomNumberGenerator;
+import racingcar.util.NumberGenerator;
 
 /**
  * 자동차 1대를 관리하는 객체
@@ -13,9 +13,22 @@ public class Car {
 
     private final String name;
     private int position = 0;
+    private NumberGenerator numberGenerator;
 
-    public Car(String name) {
+    /**
+     * 프로그램 구현에 사용하는 생성자
+     */
+    public Car(String name, NumberGenerator numberGenerator) {
         this.name = name;
+        this.numberGenerator = numberGenerator;
+    }
+
+    /**
+     * 테스트에 사용하는 생성자
+     */
+    public Car(String name, int position) {
+        this.name = name;
+        this.position = position;
     }
 
     public String getName() {
@@ -30,7 +43,7 @@ public class Car {
      * 자동차를 한 칸 이동할 때 사용하는 메서드
      */
     public void moveForward() {
-        int number = RandomNumberGenerator.getNumber();
+        int number = numberGenerator.generate();
         if (number >= GameRule.MOVE_FORWARD.getNumber()) {
             position++;
         }
