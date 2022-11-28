@@ -13,6 +13,10 @@ public class InputView {
     private static final String CAR_NAME_DELIMITER = ",";
     private static final String INPUT_ATTEMPTS = "시도할 회수는 몇회인가요?";
 
+    public static String getCarNameDelimiter() {
+        return CAR_NAME_DELIMITER;
+    }
+
     /**
      * 자동차 이름을 입력할 때 사용하는 메서드
      * @return 2개 이상 입력 시, 쉼표 구분 여부를 검증하고 입력 값을 반환함
@@ -27,7 +31,7 @@ public class InputView {
 
     public static void validateSeparatedByComma(String input, String delimiter) {
         if (input.length() > CarName.getCarNameLength() && !input.contains(delimiter)) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ErrorMessage.NOT_SEPARATED_BY_COMMA_ERROR.getMessage());
         }
     }
 
