@@ -35,11 +35,11 @@ public class Cars {
                 .collect(Collectors.toList());
     }
 
-    public Map<String, Integer> getCarsInformation() {
+    public Map<String, String> getCarsInformation() {
         return cars.stream()
                 .collect(Collectors.toMap(
                         Car::getName,
-                        Car::getPosition
+                        Car::toString
                 ));
     }
 

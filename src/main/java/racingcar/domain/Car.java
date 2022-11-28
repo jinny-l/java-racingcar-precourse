@@ -37,11 +37,15 @@ public class Car {
 
     /**
      * 자동차가 이동한 결과를 표현할 때 사용하는 메서드
-     * @return 이동한 만큼 "-"를 String으로 반환함
+     * @return 이동한 만큼 "-"를 반환
      */
     @Override
     public String toString() {
-        return POSITION_EXPRESSION.repeat(position);
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < position; i++) {
+            stringBuilder.append(POSITION_EXPRESSION);
+        }
+        return stringBuilder.toString();
     }
 
 }
