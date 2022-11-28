@@ -26,6 +26,7 @@ public class GameController {
     private void initialize() {
         readCarName();
         readAttempts();
+        System.out.println();
         cars = new Cars(carNames.getNames());
         numberOfAttempts = attempts.get();
     }
@@ -52,6 +53,7 @@ public class GameController {
      * 실행 결과 출력 시 사용하는 메서드
      */
     private void printResult() {
+        OutputView.printMessage();
         for (int i = 0; i < numberOfAttempts; i++) {
             cars.move();
             OutputView.printResult(cars.getCarsInformation());

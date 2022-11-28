@@ -16,13 +16,16 @@ public class OutputView {
      */
     public static void printResult(Map<String, String> carsInformation) {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(OUTPUT_RESULT).append("\n");
         carsInformation.forEach((key, value) -> stringBuilder
                 .append(key)
                 .append(NAME_DELIMITER)
                 .append(value)
                 .append("\n"));
         System.out.println(stringBuilder);
+    }
+
+    public static void printMessage() {
+        System.out.println(OUTPUT_RESULT);
     }
 
     /**
